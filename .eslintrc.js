@@ -1,3 +1,5 @@
+const tsconfig = require(`./tsconfig`);
+
 module.exports = {
   root: true,
   parser: '@typescript-eslint/parser',
@@ -13,9 +15,8 @@ module.exports = {
       version: 'detect',
     },
     'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      typescript: {
+        project: `.`,
       },
     },
   },
@@ -48,4 +49,39 @@ module.exports = {
       },
     ],
   },
+  'import/prefer-default-export': `off`,
+  'import/extensions': [
+    `error`,
+    `ignorePackages`,
+    {
+      ts: `never`,
+      tsx: `never`,
+      js: `never`,
+      jsx: `never`,
+    },
+  ],
+  'import/order': [
+    `error`,
+    {
+      groups: [[`builtin`, `external`], `internal`, [`sibling`, `index`]],
+      pathGroups: [
+        {
+          pattern: `react`,
+          group: `external`,
+          position: `before`,
+        },
+        ...Object.keys(tsconfig.compilerOptions.paths).map((key) => ({
+          pattern: `${key}*`,
+          group: `internal`,
+          position: `after`,
+        })),
+      ],
+      pathGroupsExcludedImportTypes: [],
+      'newlines-between': `always`,
+      alphabetize: {
+        order: `asc`,
+        caseInsensitive: true,
+      },
+    },
+  ],
 };
