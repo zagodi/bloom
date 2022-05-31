@@ -3,7 +3,10 @@ import { api } from 'api';
 import { RequestError } from 'entitites/Response';
 import { BooksResponse } from './types';
 
-const createUseBooksKey = (): QueryKey => [`useBooksKey`];
+export const createUseBooksKey = (listName?: string): QueryKey => [
+  `useBooksKey`,
+  listName,
+];
 
 export const useBooks = (
   listName?: string,

@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  flex: 1;
+  width: 100%;
   flex-direction: column;
-  border: 2px solid blue;
+  align-items: center;
+  margin-bottom: ${(props) => props.theme.spacings.space14};
 `;

@@ -16,12 +16,10 @@ export default createGlobalStyle`
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  border: 1px solid green;
 `;
 
 export const Main = styled.div`
   display: flex;
   flex: 1;
-  border: 1px solid red;
   max-width: 1080px;
 `;

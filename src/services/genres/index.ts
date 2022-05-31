@@ -3,7 +3,7 @@ import { api } from 'api';
 
 import { GenresResponse } from './types';
 
-const createUseGenresKey = (): QueryKey => [`useGenres`];
+export const createUseGenresKey = (): QueryKey => [`useGenres`];
 
 export const useGenres = () =>
   useQuery<GenresResponse>(createUseGenresKey(), () =>

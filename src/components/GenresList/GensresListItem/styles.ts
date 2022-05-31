@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const Card = styled.div`
   display: flex;
-  /* flex: 1; */
-  border: 1px solid grey;
+  width: 100%;
   height: 50px;
   align-items: center;
   justify-content: space-between;
@@ -11,13 +10,12 @@ export const Card = styled.div`
 
 export const InfosContainer = styled.div`
   display: flex;
-  /* flex: 0.5; */
+  flex: 0.6;
   justify-content: flex-start;
-  border: 1px solid red;
 `;
 
 export const PublishedsContainer = styled.div`
   display: flex;
-  /* flex: 0.4; */
+  flex: 0.3;
   justify-content: space-between;
 `;
